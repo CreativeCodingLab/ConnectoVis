@@ -19,8 +19,9 @@ public class ScrollMenu : MonoBehaviour
     private DataLoader dataLoader;
     private Builder builder;
     //private OverViewSceneManager sceneManager;
-    private GameObject _ScrollTextWithColorBox;
-    private GameObject _ScrollText;
+    private GameObject _ScrollText_NetworksWithColorBox;
+    private GameObject _ScrollText_Networks;
+    private GameObject _ScrollText_BrainRegion;
     private string[] ModuleList;
     private string[] BrainRegionList;
     private string[] FolderNames;
@@ -42,9 +43,11 @@ public class ScrollMenu : MonoBehaviour
         dataLoader = GameObject.Find("DataLoader").GetComponent<DataLoader>();
         builder = GameObject.Find("Builder").GetComponent<Builder>();
         //sceneManager = GameObject.Find("SceneManager").GetComponent<OverViewSceneManager>();
-        //_ScrollTextWithColorBox = Resources.Load("Prefabs/ListItemButtonWithColorBox") as GameObject;
-        _ScrollText = Resources.Load("Prefabs/ListItemButton") as GameObject;
-        _ScrollTextWithColorBox = Resources.Load("Prefabs/ListItemButtonWithColorBox") as GameObject;
+        //_ScrollText_NetworksWithColorBox = Resources.Load("Prefabs/ListItemButtonWithColorBox") as GameObject;
+        _ScrollText_Networks = Resources.Load("Prefabs/ListItemButton") as GameObject;
+        _ScrollText_BrainRegion = Resources.Load("Prefabs/ListItemButton2") as GameObject;
+
+        _ScrollText_NetworksWithColorBox = Resources.Load("Prefabs/ListItemButtonWithColorBox") as GameObject;
         
     }
 
@@ -62,7 +65,7 @@ public class ScrollMenu : MonoBehaviour
             {
                 for (int i = 0; i < ModuleList.Length; i++)
                 {
-                    GameObject ScrollText = Instantiate(_ScrollTextWithColorBox, new Vector3(0, 0, 0), Quaternion.identity);
+                    GameObject ScrollText = Instantiate(_ScrollText_NetworksWithColorBox, new Vector3(0, 0, 0), Quaternion.identity);
                     LegendItems.Add(ScrollText);
                     ScrollText.transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>().text = "Mod " + ModuleList[i];
                     ScrollText.transform.Find("ColorBoxParent").Find("ColorBox").GetComponent<Image>().color = ColorCoding[ModuleList[i]];
@@ -80,7 +83,7 @@ public class ScrollMenu : MonoBehaviour
             {
                 for (int i = 0; i < BrainRegionList.Length; i++)
                 {
-                    GameObject ScrollText = Instantiate(_ScrollText, new Vector3(0, 0, 0), Quaternion.identity);
+                    GameObject ScrollText = Instantiate(_ScrollText_BrainRegion, new Vector3(0, 0, 0), Quaternion.identity);
                     LegendItems.Add(ScrollText);
                     ScrollText.transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>().text = BrainRegionList[i];
                     Vector3 scale = ScrollText.transform.localScale;
@@ -96,7 +99,7 @@ public class ScrollMenu : MonoBehaviour
             {
                 for (int i = 0; i < FolderNames.Length; i++)
                 {
-                    GameObject ScrollText = Instantiate(_ScrollText, new Vector3(0, 0, 0), Quaternion.identity);
+                    GameObject ScrollText = Instantiate(_ScrollText_Networks, new Vector3(0, 0, 0), Quaternion.identity);
                     LegendItems.Add(ScrollText);
                     ScrollText.transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>().text = FolderNames[i];
                     Vector3 scale = ScrollText.transform.localScale;
@@ -161,7 +164,7 @@ public class ScrollMenu : MonoBehaviour
 
                 if (result.gameObject.tag == "Network")
                 {
-                    string Network = "Connectome_"+result.gameObject.name+"_D";
+                    string Network = "Subject_"+result.gameObject.name+"_D";
                     Color textColor = result.gameObject.transform.Find("Text").GetComponent<TMPro.TextMeshProUGUI>().color;
                     selectedNetworks = builder.SelectedNetworks;
                     //if (textColor == Color.white)

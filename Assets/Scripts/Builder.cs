@@ -120,11 +120,11 @@ public class Builder : MonoBehaviour
             for (int i = 0; i < n; i++)
             {
                 NetworkParent = Instantiate(_NetworkParentEmpty, networkPositionList[i], Quaternion.identity);
-                NetworkParent.name = "Connectome_"+NetworkNames[i] +"_D";
-                SelectedNetworks.Add("Connectome_" + NetworkNames[i] + "_D");
+                NetworkParent.name = "Subject_"+NetworkNames[i] +"_D";
+                SelectedNetworks.Add("Subject_" + NetworkNames[i] + "_D");
                 NetworkParent.transform.localScale = NetworkScaleList;
                 NetworkParent.transform.tag = "SingleConnectome";
-                NetworkParent.AddComponent<SingleNetwork>().attachNetworkData(atlas, NetworkList[i], "Connectome_" + NetworkNames[i] + "_D", _nodePrefab, _edgePrefab, NetworkTimeStep[NetworkNames[i]], ColorCoding);
+                NetworkParent.AddComponent<SingleNetwork>().attachNetworkData(atlas, NetworkList[i], "Subject_" + NetworkNames[i] + "_D", _nodePrefab, _edgePrefab, NetworkTimeStep[NetworkNames[i]], ColorCoding);
             }
         }
         //for (int i = 0; i < 1; i++)
@@ -142,20 +142,20 @@ public class Builder : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 NetworkParent = Instantiate(_NetworkParentEmpty, networkPositionList[i], Quaternion.identity);
-                NetworkParent.name = "Connectome_" + NetworkNames[i] + "_D";
-                SelectedNetworks.Add("Connectome_" + NetworkNames[i] + "_D");
+                NetworkParent.name = "Subject_" + NetworkNames[i] + "_D";
+                SelectedNetworks.Add("Subject_" + NetworkNames[i] + "_D");
                 NetworkParent.transform.localScale = NetworkScaleList;
                 NetworkParent.transform.tag = "SingleConnectome";
-                NetworkParent.AddComponent<SingleNetwork>().attachNetworkData(atlas, NetworkList[i], "Connectome_" + NetworkNames[i] + "_D", _nodePrefab, _edgePrefab, NetworkTimeStep[NetworkNames[i]], ColorCoding);
+                NetworkParent.AddComponent<SingleNetwork>().attachNetworkData(atlas, NetworkList[i], "Subject_" + NetworkNames[i] + "_D", _nodePrefab, _edgePrefab, NetworkTimeStep[NetworkNames[i]], ColorCoding);
             }
             for ( int i= 4; i < n; i++)
             {
                 NetworkParent = Instantiate(_NetworkParentEmpty, networkPositionList[4], Quaternion.identity);
-                NetworkParent.name = "Connectome_" + NetworkNames[i] + "_D";
+                NetworkParent.name = "Subject_" + NetworkNames[i] + "_D";
                 //NotSelectedNetworks.Add(NetworkNames[i]);
                 NetworkParent.transform.localScale = NetworkScaleList;
                 NetworkParent.transform.tag = "SingleConnectome";
-                NetworkParent.AddComponent<SingleNetwork>().attachNetworkData(atlas, NetworkList[i], "Connectome_" + NetworkNames[i] + "_D", _nodePrefab, _edgePrefab, NetworkTimeStep[NetworkNames[i]], ColorCoding);
+                NetworkParent.AddComponent<SingleNetwork>().attachNetworkData(atlas, NetworkList[i], "Subject_" + NetworkNames[i] + "_D", _nodePrefab, _edgePrefab, NetworkTimeStep[NetworkNames[i]], ColorCoding);
             }
         }
         PreviousSelectedNetworks = new List<string>(SelectedNetworks);

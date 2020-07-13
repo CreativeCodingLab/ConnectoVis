@@ -60,7 +60,7 @@ public class DataLoader : MonoBehaviour
         {
             networkName = new DirectoryInfo(NetworkFolders[i]).Name;
             NetworkFolderName[i] = networkName;
-            NetworkNameIndex.Add("Connectome_"+networkName+"_D", i);
+            NetworkNameIndex.Add("Subject_"+networkName+"_D", i);
         }
         return NetworkFolderName;
     }

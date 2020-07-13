@@ -114,7 +114,7 @@ public class TimeLineCanvas : MonoBehaviour
                 this.transform.name = "T" + builder.SelectedNetworks[timelineNumber];
                 networkName = builder.SelectedNetworks[timelineNumber];
                 //print(networkName);
-                Text(networkName, new Vector2(-41, 65), new Vector2(130, 1), "Title", 15);
+                Text(networkName, new Vector2(-32f, 65), new Vector2(200, 1), "Title", 15);
             }
             SingleNetwork = GameObject.Find(networkName);
             //print(SingleNetwork);
@@ -134,7 +134,7 @@ public class TimeLineCanvas : MonoBehaviour
                 float height = 0.7f;
                 //if(i ==1 || i % 50 == 0)
                 {
-                    Text((i).ToString(), new Vector2(-55f + width/2+ 98f / timestep *(i-1) , -38), new Vector2(width, height), "TimeStep",10);
+                    Text((i).ToString(), new Vector2(-58f + width/2+ 98f / timestep *(i-1) , -38), new Vector2(width, height), "TimeStep",10);
                 }
             }
             for (int i = 0; i <5; i++)
