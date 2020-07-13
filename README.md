@@ -4,11 +4,6 @@ Spatio-Temporal Exploration of Dynamic Connectomes
 ![](/Images/ConnectoVisUC1.png)
 ![](/Images/ConnectoVisUC2.png)
 ConnectoVis is a novel software tool that facilitates the interactive exploration and comparative analysis of multiple dynamic brain networks.
-# TempoCave article
-
-# How to use TempoCave
-You can download the executible version [here](https://drive.google.com/a/ucsc.edu/file/d/1Is6XfGsFR2iLBrW2W_NVurXw-cHLl--I/view?usp=sharing) to try it out, which does not require Unity platform. 
-
 
 ### Upload Custom Data 
 - You can upload your custom data folder under the connectome data pathway: ConnectoVis/Assets/Resources/Data 
